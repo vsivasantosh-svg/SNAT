@@ -1,0 +1,105 @@
+:root{--navy:#10233f;--blue:#1769aa;--cyan:#eaf5ff;--ink:#1d2939;--muted:#667085;--line:#e5eaf0;--bg:#f5f8fc}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Arial,Helvetica,sans-serif}
+.wrap{max-width:1100px;margin:auto;padding:24px}.hero{background:linear-gradient(125deg,#10233f,#1769aa);color:#fff;border-radius:22px;padding:38px;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;overflow:hidden}
+.eyebrow{letter-spacing:2px;text-transform:uppercase;font-size:12px;font-weight:bold;color:#b9e3ff}.hero h1{font-size:clamp(30px,5vw,48px);line-height:1.12;margin:12px 0}.hero p{color:#e2efff;max-width:620px}.hero-art{width:100%;max-width:360px;justify-self:center}
+h2{font-size:25px;color:var(--navy);margin:0 0 12px}.intro{color:var(--muted);margin:25px 2px}.section{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin:18px 0;box-shadow:0 5px 20px #10233f08}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.tip{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fff}.tip h3{margin:8px 0;color:var(--navy);font-size:18px}.tip p{margin:6px 0;color:#475467}.illus{width:100%;height:150px;background:var(--cyan);border-radius:10px;display:block;margin-bottom:12px}
+ul,ol{padding-left:22px}li{margin:7px 0}.tag{display:inline-block;background:#e8f3ff;color:#14558d;padding:4px 10px;border-radius:99px;font-size:12px;font-weight:bold}
+code{background:#f0f3f7;padding:3px 6px;border-radius:5px;color:#163e65;overflow-wrap:anywhere}.cmd{background:#101828;color:#e6f1ff;padding:14px;border-radius:10px;overflow:auto;margin:10px 0}.cmd code{background:none;color:inherit}
+.checklist label{display:block;padding:8px 0;border-bottom:1px solid #eef1f5}.checklist input{margin-right:10px;transform:scale(1.15)}
+.contact{background:#10233f;color:white;border-radius:18px;padding:26px;margin-top:24px;display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.contact h2{color:white;margin-bottom:5px}.contact a{color:#b9e3ff;text-decoration:none}.contact a:hover{text-decoration:underline}.contact-details{line-height:1.9}.footer{text-align:center;color:var(--muted);font-size:13px;padding:20px}
+@media(max-width:720px){.wrap{padding:14px}.hero{grid-template-columns:1fr;padding:26px}.hero-art{max-width:260px}.grid{grid-template-columns:1fr}.section{padding:18px}}
+@media print{body{background:white}.wrap{max-width:none;padding:0}.section,.hero,.contact{break-inside:avoid;box-shadow:none}.checklist input{appearance:auto}}
+
+/* SNAT animated experience */
+html { scroll-behavior: smooth; }
+@keyframes snatRise { from { opacity:0; transform:translateY(28px) scale(.985); } to { opacity:1; transform:translateY(0) scale(1); } }
+@keyframes snatFloat { 0%,100% { transform:translateY(0) rotate(0); } 50% { transform:translateY(-13px) rotate(1.5deg); } }
+@keyframes snatPulse { 0%,100% { box-shadow:0 0 0 0 rgba(141,211,255,0); } 50% { box-shadow:0 0 0 12px rgba(141,211,255,.15); } }
+@keyframes snatShine { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+@keyframes snatBob { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-5px); } }
+.hero { position:relative; isolation:isolate; overflow:hidden; animation:snatRise .9s cubic-bezier(.2,.7,.2,1) both; }
+.hero:after { content:""; position:absolute; inset:-40% auto -40% -45%; width:35%; z-index:-1; transform:skewX(-20deg); background:linear-gradient(90deg,transparent,rgba(255,255,255,.13),transparent); animation:snatShine 7s ease-in-out infinite; }
+.hero-art { animation:snatFloat 4.5s ease-in-out infinite; }
+.section { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+.section.is-visible { opacity:1; transform:translateY(0); }
+.tip { transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease; }
+.tip:hover { transform:translateY(-6px); box-shadow:0 14px 30px rgba(16,35,63,.13); border-color:#9bc9ed; }
+.tag { animation:snatBob 3s ease-in-out infinite; }
+.contact { animation:snatPulse 4s ease-in-out infinite; }
+.checklist label { transition:background .25s ease, padding-left .25s ease, color .25s ease; }
+.checklist label:has(input:checked) { background:#effaf3; padding-left:12px; color:#276749; }
+.checklist input { accent-color:#1769aa; transform:scale(1.18); }
+.cmd { transition:transform .2s ease, box-shadow .2s ease; }
+.cmd:hover { transform:translateX(4px); box-shadow:0 7px 18px rgba(16,24,40,.15); }
+a { transition:opacity .2s ease, text-decoration-color .2s ease; }
+a:hover { opacity:.78; }
+@media (prefers-reduced-motion: reduce) {
+ html { scroll-behavior:auto; }
+ *, *::before, *::after { animation:none !important; transition:none !important; }
+ .section { opacity:1; transform:none; }
+}
+
+/* Creative SNAT visual refresh */
+:root{
+ --navy:#081b33;--blue:#1769aa;--cyan:#dff4ff;--ink:#172b43;
+ --muted:#62748a;--line:#dce7f2;--bg:#eef4fb;--accent:#45c2d8;
+}
+body{
+ background:
+  radial-gradient(circle at 8% 8%,rgba(69,194,216,.13),transparent 26rem),
+  radial-gradient(circle at 92% 28%,rgba(23,105,170,.10),transparent 30rem),
+  #f3f7fc;
+}
+.wrap{max-width:1160px}
+.hero{
+ min-height:390px;border:1px solid rgba(255,255,255,.18);
+ background:linear-gradient(125deg,#07182d 0%,#103c68 52%,#087eaa 100%);
+ box-shadow:0 24px 60px rgba(8,27,51,.20);
+}
+.hero:before{
+ content:"";position:absolute;width:340px;height:340px;border:1px solid rgba(255,255,255,.16);
+ border-radius:50%;right:8%;top:-170px;box-shadow:0 0 0 35px rgba(255,255,255,.035),0 0 0 75px rgba(255,255,255,.025);
+ pointer-events:none;
+}
+.hero h1{letter-spacing:-1.5px;text-shadow:0 5px 24px rgba(0,0,0,.2)}
+.hero p{font-size:17px;line-height:1.8}
+.hero .tag{background:rgba(255,255,255,.15);color:#e8f7ff;border:1px solid rgba(255,255,255,.18)}
+.intro{
+ background:#fff;border:1px solid var(--line);border-left:5px solid var(--accent);
+ border-radius:12px;padding:17px 20px;box-shadow:0 8px 25px rgba(16,35,63,.045)
+}
+.section{
+ position:relative;border:1px solid rgba(190,209,228,.8);border-radius:20px;
+ padding:clamp(20px,3vw,30px);box-shadow:0 10px 34px rgba(16,35,63,.055);
+}
+.section h2{display:flex;align-items:center;gap:11px;letter-spacing:-.5px}
+.section h2:before{content:"";display:inline-block;width:7px;height:27px;border-radius:8px;background:linear-gradient(#45c2d8,#1769aa)}
+.section h3{letter-spacing:-.2px}
+.grid{gap:18px}
+.tip{
+ background:linear-gradient(145deg,#fff,#f9fcff);border:1px solid #e0eaf4;
+ border-radius:16px;padding:18px;box-shadow:0 4px 15px rgba(16,35,63,.025)
+}
+.illus{height:165px;background:linear-gradient(135deg,#e6f5ff,#f3fbff);border:1px solid #dceef9}
+.tag{background:#e5f5fb;color:#075c83;letter-spacing:.35px;text-transform:uppercase}
+.cmd{border:1px solid #294765;box-shadow:inset 4px 0 0 #45c2d8}
+.checklist{background:linear-gradient(145deg,#fff,#f8fcff)}
+.checklist label{padding:11px 10px;border-bottom:1px solid #e8eef5}
+.checklist label:hover{background:#f1f8fd}
+.contact{
+ position:relative;overflow:hidden;padding:32px;
+ background:linear-gradient(115deg,#07182d,#124d7b 70%,#087eaa);
+ border:1px solid rgba(255,255,255,.2);box-shadow:0 18px 45px rgba(8,27,51,.18)
+}
+.contact:after{
+ content:"SNAT";position:absolute;right:20px;bottom:-45px;font-size:130px;font-weight:900;
+ letter-spacing:-8px;color:rgba(255,255,255,.055);pointer-events:none
+}
+.contact>*{position:relative;z-index:1}
+.contact h2{font-size:29px;letter-spacing:-.7px}
+.footer{padding:24px 10px}
+@media(max-width:720px){
+ .hero{min-height:0}.hero:before{right:-190px;top:-190px}
+ .contact:after{font-size:90px;right:8px;bottom:-25px}
+}
